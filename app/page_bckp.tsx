@@ -1,15 +1,8 @@
 "use client";
 
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Github, Linkedin, Mail, Download, BrainCircuit, Eye, Code, FileText, Bot, Briefcase, Star } from 'lucide-react';
-
-// Define types for component props
-interface SectionProps {
-  title: string;
-  icon: ReactNode;
-  children: ReactNode;
-}
 
 // Main Component for the Portfolio Page
 export default function Portfolio() {
@@ -237,8 +230,8 @@ export default function Portfolio() {
   );
 }
 
-// A reusable section component with defined prop types
-function Section({ title, icon, children }: SectionProps) {
+// A reusable section component
+function Section({ title, icon, children }) {
   return (
     <motion.section 
         className="py-12"
