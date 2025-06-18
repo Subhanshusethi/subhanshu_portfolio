@@ -195,7 +195,7 @@ export default function Portfolio() {
               AI Engineer | Computer Vision | Multimodal Research
             </p>
             <p className="mt-4 max-w-xl text-gray-300">
-             Final-year DTU student passionate about building intelligent systems at the intersection of vision and language. Driven by a desire to solve complex problems, from developing SOTA models for academic publication to engineering production-ready robotics solutions.
+            I build intelligent systems that see and understand the world—grounded in the mathematical first principles of computer vision and deep learning. As a final-year student at DTU, I’m driven by a deep curiosity to solve complex, real-world problems by bridging foundational research with deployable AI and robotics solutions. My work spans from designing perception pipelines to developing scalable models that integrate seamlessly into real-world systems.
             </p>
             <div className="mt-8 flex justify-center md:justify-start items-center gap-4">
                <a href="/SubhanshuCV.pdf" download className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105">
