@@ -94,6 +94,26 @@ const projectsData: Project[] = [
     link: "https://github.com/Subhanshusethi/PDF_QA_Llama3.2",
     status: "Personal Project",
     metrics: [{ label: "Architecture", value: "RAG", icon: <BrainCircuit size={16} /> }, { label: "Model", value: "Llama3", icon: <Bot size={16} /> }],
+  },
+  {
+    title: "Optimized Object Pose Estimation Pipeline",
+    shortDescription: "Real-time RGB-D vision pipeline for trolley detection and 3D pose estimation on CPU-only edge hardware.",
+    longDescription: "Developed a real-time RGB-D vision pipeline for trolley detection and 3D pose estimation using YOLO (ONNX) in C++/ROS. Deployed on CPU-only edge hardware (Intel NUC), achieving stable 10–30 Hz inference for autonomous robotic alignment. The pipeline is optimized for low-latency, high-reliability performance in industrial environments.",
+    image: "/assets/images/flipkart.png",
+    tags: ["YOLO", "ONNX", "C++", "ROS", "RGB-D", "Pose Estimation", "Intel NUC"],
+    link: "https://github.com/Subhanshusethi/Object_Detection_PoseEstimation",
+    status: "Nov 2025 – Feb 2026",
+    metrics: [{ label: "Inference", value: "10–30 Hz", icon: <Zap size={16} /> }, { label: "Hardware", value: "CPU-Only Edge", icon: <Target size={16} /> }],
+  },
+  {
+    title: "Scratch Detection – ML Deployment",
+    shortDescription: "End-to-end automated ML pipeline with FastAPI, Docker, MLflow, and AWS deployment.",
+    longDescription: "Designed an automated ML pipeline using FastAPI, Docker, and MLflow, integrating training, experiment tracking, and CI/CD. Deployed the containerized stack on AWS EC2 with Dockerized FastAPI services and S3-based dataset handling, enabling scalable and reproducible model deployment for scratch detection classification.",
+    image: "/assets/images/pdf.png",
+    tags: ["FastAPI", "Docker", "MLflow", "AWS EC2", "S3", "CI/CD", "Python"],
+    link: "https://github.com/Subhanshusethi/classification-deploy",
+    status: "Aug 2025 – Sept 2025",
+    metrics: [{ label: "Infra", value: "AWS EC2 + S3", icon: <Trophy size={16} /> }, { label: "Stack", value: "FastAPI + MLflow", icon: <Code size={16} /> }],
   }
 ];
 
