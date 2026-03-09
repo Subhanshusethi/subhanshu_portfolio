@@ -99,7 +99,7 @@ const projectsData: Project[] = [
     title: "Optimized Object Pose Estimation Pipeline",
     shortDescription: "Real-time RGB-D vision pipeline for trolley detection and 3D pose estimation on CPU-only edge hardware.",
     longDescription: "Developed a real-time RGB-D vision pipeline for trolley detection and 3D pose estimation using YOLO (ONNX) in C++/ROS. Deployed on CPU-only edge hardware (Intel NUC), achieving stable 10–30 Hz inference for autonomous robotic alignment. The pipeline is optimized for low-latency, high-reliability performance in industrial environments.",
-    image: "/assets/images/flipkart.png",
+    image: "/assets/images/optipose.png",
     tags: ["YOLO", "ONNX", "C++", "ROS", "RGB-D", "Pose Estimation", "Intel NUC"],
     link: "https://github.com/Subhanshusethi/Object_Detection_PoseEstimation",
     status: "Nov 2025 – Feb 2026",
@@ -109,7 +109,7 @@ const projectsData: Project[] = [
     title: "Scratch Detection – ML Deployment",
     shortDescription: "End-to-end automated ML pipeline with FastAPI, Docker, MLflow, and AWS deployment.",
     longDescription: "Designed an automated ML pipeline using FastAPI, Docker, and MLflow, integrating training, experiment tracking, and CI/CD. Deployed the containerized stack on AWS EC2 with Dockerized FastAPI services and S3-based dataset handling, enabling scalable and reproducible model deployment for scratch detection classification.",
-    image: "/assets/images/pdf.png",
+    image: "/assets/images/scratch.png",
     tags: ["FastAPI", "Docker", "MLflow", "AWS EC2", "S3", "CI/CD", "Python"],
     link: "https://github.com/Subhanshusethi/classification-deploy",
     status: "Aug 2025 – Sept 2025",
@@ -215,7 +215,7 @@ export default function Portfolio() {
               AI Engineer | Computer Vision | Multimodal Research
             </p>
             <p className="mt-4 max-w-xl text-gray-300">
-            I build intelligent systems that see and understand the world—grounded in the mathematical first principles of computer vision and deep learning. As a final-year student at DTU, I’m driven by a deep curiosity to solve complex, real-world problems by bridging foundational research with deployable AI and robotics solutions. My work spans from designing perception pipelines to developing scalable models that integrate seamlessly into real-world systems.
+            I build intelligent systems that see and understand the world—grounded in the mathematical first principles of computer vision and deep learning. As a graduate student from DTU, I’m driven by a deep curiosity to solve complex, real-world problems by bridging foundational research with deployable AI and robotics solutions. My work spans from designing perception pipelines to developing scalable models that integrate seamlessly into real-world systems.
             </p>
             <div className="mt-8 flex justify-center md:justify-start items-center gap-4">
                <a href="/SubhanshuCV.pdf" download className="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-500 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105">
