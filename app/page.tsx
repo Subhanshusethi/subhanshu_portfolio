@@ -28,19 +28,19 @@ interface Project {
 }
 
 interface ExperiencePoint {
-    text: string;
-    links?: {
-        github: string;
-        video: string;
-    };
+  text: string;
+  links?: {
+    github: string;
+    video: string;
+  };
 }
 
 interface Experience {
-    role: string;
-    company: string;
-    date: string;
-    description: string;
-    points: ExperiencePoint[];
+  role: string;
+  company: string;
+  date: string;
+  description: string;
+  points: ExperiencePoint[];
 }
 
 
@@ -77,7 +77,7 @@ const projectsData: Project[] = [
     status: "National Finalist",
     metrics: [{ label: "F1 Score", value: "0.86", icon: <Target size={16} /> }, { label: "Performance", value: "-50% Proc. Time", icon: <Zap size={16} /> }],
   },
-   {
+  {
     title: "Grammar Scoring Engine (Speech Classification)",
     shortDescription: "Fine-tuned Gemma 2B model for sophisticated grammar and fluency scoring.",
     longDescription: "Developed a specialized model for evaluating English proficiency by fine-tuning Google's Gemma 2B. This project focuses on nuanced grammar correction and fluency assessment, showcasing skills in transfer learning and model customization for specific NLP downstream tasks.",
@@ -120,65 +120,65 @@ const projectsData: Project[] = [
 ];
 
 const experienceData: Experience[] = [
-    {
-        role: "Computer Vision Intern",
-        company: "Novus Hi-Tech",
-        date: "Jun 2024 – Present",
-        description: "Engineered and productionized real-time computer vision pipelines for autonomous pallet picker robots.",
-        points: [
-            { text: "Improved object detection and pose estimation accuracy by 20% using YOLO, ByteTrack, and Kalman filters." },
-            { text: "Accelerated inference speed on NVIDIA edge devices using TensorRT and ONNX." },
-            { text: "Developed and deployed scalable, Dockerized solutions in a production environment." }
-        ]
-    },
-    {
-        role: "Avionics Technician",
-        company: "Team UAS-DTU",
-        date: "2022 – 2023",
-        description: "Key contributor to the avionics subsystem for quadcopter and fixed-wing UAVs, mentoring 10+ members.",
-        points: [
-            {
-                text: "Developed system for an autonomous lane-following system using classical Computer Vision.",
-                links: {
-                    github: "https://github.com/Subhanshusethi/line-follwing-drone",
-                    video: "/assets/videos/lane-following.mp4"
-                }
-            },
-            {
-                text: "Developed a real-time facial tracking system to automate camera-work for online lectures.",
-                links: {
-                    github: "https://github.com/Subhanshusethi/Real-time-tracking-system",
-                    video: "/assets/videos/face-tracking.mp4"
-                }
-            },
-            { text: "Secured 3rd place as team lead in an inter-university Robot Soccer Competition." }
-        ]
-    }
+  {
+    role: "Computer Vision Intern",
+    company: "Novus Hi-Tech",
+    date: "Jun 2024 – Present",
+    description: "Engineered and productionized real-time computer vision pipelines for autonomous pallet picker robots.",
+    points: [
+      { text: "Improved object detection and pose estimation accuracy by 20% using YOLO, ByteTrack, and Kalman filters." },
+      { text: "Accelerated inference speed on NVIDIA edge devices using TensorRT and ONNX." },
+      { text: "Developed and deployed scalable, Dockerized solutions in a production environment." }
+    ]
+  },
+  {
+    role: "Avionics Technician",
+    company: "Team UAS-DTU",
+    date: "2022 – 2023",
+    description: "Key contributor to the avionics subsystem for quadcopter and fixed-wing UAVs, mentoring 10+ members.",
+    points: [
+      {
+        text: "Developed system for an autonomous lane-following system using classical Computer Vision.",
+        links: {
+          github: "https://github.com/Subhanshusethi/line-follwing-drone",
+          video: "/assets/videos/lane-following.mp4"
+        }
+      },
+      {
+        text: "Developed a real-time facial tracking system to automate camera-work for online lectures.",
+        links: {
+          github: "https://github.com/Subhanshusethi/Real-time-tracking-system",
+          video: "/assets/videos/face-tracking.mp4"
+        }
+      },
+      { text: "Secured 3rd place as team lead in an inter-university Robot Soccer Competition." }
+    ]
+  }
 ];
 
 const publicationsData = [
-    {
-        title: "GEXSent: Gated Experts for Robust Sentiment Analysis Across Modalities",
-        journal: "Accepted at International Joint Conference on Neural Networks (IJCNN), 2025",
-        status: "Accepted"
-    },
-    {
-        title: "ContXCLIP: Contextual Attention for Vision-Language Understanding",
-        journal: "Under review at Signal Processing: Image Communication (Elsevier)",
-        status: "Under Review"
-    }
+  {
+    title: "GEXSent: Gated Experts for Robust Sentiment Analysis Across Modalities",
+    journal: "Accepted at International Joint Conference on Neural Networks (IJCNN), 2025",
+    status: "Accepted"
+  },
+  {
+    title: "ContXCLIP: Contextual Attention for Vision-Language Understanding",
+    journal: "Under review at Signal Processing: Image Communication (Elsevier)",
+    status: "Under Review"
+  }
 ];
 
 const achievementsData = [
-    { title: "Flipkart Grid Robotics Challenge 2024", detail: "National Finalist (Top 10 of 19,000+ teams)", icon: <Trophy color="#FFD700" /> },
-    { title: "International Micro Aerial Vehicle (IMAV) 2023", detail: "3rd Place Worldwide, Aachen, Germany", icon: <Trophy color="#C0C0C0" /> },
-    { title: "ICUAS 2025 Competition", detail: "6th Place Worldwide, CBRNe Disaster Rescue", icon: <Trophy color="#CD7F32" /> },
+  { title: "Flipkart Grid Robotics Challenge 2024", detail: "National Finalist (Top 10 of 19,000+ teams)", icon: <Trophy color="#FFD700" /> },
+  { title: "International Micro Aerial Vehicle (IMAV) 2023", detail: "3rd Place Worldwide, Aachen, Germany", icon: <Trophy color="#C0C0C0" /> },
+  { title: "ICUAS 2025 Competition", detail: "6th Place Worldwide, CBRNe Disaster Rescue", icon: <Trophy color="#CD7F32" /> },
 ];
 
 const skillsData = {
-    "Languages & Frameworks": ["Python", "C++", "PyTorch", "TensorFlow", "Transformers", "OpenCV"],
-    "MLOps & Tools": ["Docker", "Git/GitHub", "TensorRT", "ONNX", "ROS", "Weights & Biases"],
-    "Core Concepts": ["LLM Fine-tuning", "RAG", "Quantization", "Mixture of Experts", "Attention Mechanisms", "Object Detection", "Segmentation"],
+  "Languages & Frameworks": ["Python", "C++", "PyTorch", "TensorFlow", "Transformers", "OpenCV"],
+  "MLOps & Tools": ["Docker", "Git/GitHub", "TensorRT", "ONNX", "ROS", "Weights & Biases"],
+  "Core Concepts": ["LLM Fine-tuning", "RAG", "Quantization", "Mixture of Experts", "Attention Mechanisms", "Object Detection", "Segmentation"],
 };
 
 
@@ -245,11 +245,10 @@ export default function Portfolio() {
             <a
               key={item.id}
               href={`#${item.id}`}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeSection === item.id
-                  ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30'
-                  : 'text-gray-400 hover:text-white'
-              }`}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${activeSection === item.id
+                ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30'
+                : 'text-gray-400 hover:text-white'
+                }`}
             >
               {item.label}
             </a>
@@ -338,7 +337,7 @@ export default function Portfolio() {
                   className="p-2.5 rounded-xl bg-gray-800/60 border border-gray-700/60 text-gray-400 hover:text-white hover:border-gray-500 transition-all">
                   <Github size={18} />
                 </a>
-                <a href="https://www.linkedin.com/in/subhanshus/" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.linkedin.com/in/subhanshusethi/" target="_blank" rel="noopener noreferrer"
                   className="p-2.5 rounded-xl bg-gray-800/60 border border-gray-700/60 text-gray-400 hover:text-white hover:border-gray-500 transition-all">
                   <Linkedin size={18} />
                 </a>
@@ -557,7 +556,7 @@ export default function Portfolio() {
           <p className="text-gray-600 text-sm">© 2026 Subhanshu Sethi</p>
           <div className="flex items-center gap-4">
             <a href="https://github.com/subhanshusethi" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-300 transition-colors"><Github size={16} /></a>
-            <a href="https://www.linkedin.com/in/subhanshus/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-300 transition-colors"><Linkedin size={16} /></a>
+            <a href="https://www.linkedin.com/in/subhanshusethi/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-300 transition-colors"><Linkedin size={16} /></a>
             <a href="mailto:sethisubhanshu@gmail.com" className="text-gray-600 hover:text-gray-300 transition-colors"><Mail size={16} /></a>
           </div>
         </div>
