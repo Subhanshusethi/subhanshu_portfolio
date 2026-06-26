@@ -47,6 +47,46 @@ interface Experience {
 // --- DATA ---
 const projectsData: Project[] = [
   {
+    title: "HAZE — Semantic SLAM for Repetitive Environments",
+    shortDescription: "Hybrid semantic-geometric SLAM system that reduces trajectory error by 50–80% in aliased industrial environments.",
+    longDescription: "Proposed a zone-based factor graph extension for SLAM using Gaussian Mixture Models for semantic zone discovery and a heterogeneous GNN encoder to generate pose-invariant subgraph embeddings for robust loop closure retrieval. Reduced Absolute Trajectory Error by 50% on Hilti sequences and over 80% on highly aliased Industrial Site sequences by combining zone-based spatial constraints, GNN-driven semantic factors, and geometric verification cascades. Under review at IEEE Robotics and Automation Letters (RA-L).",
+    image: "/assets/images/haze.png",
+    tags: ["C++", "PyTorch Geometric", "ROS2", "LiDAR", "GNN", "SLAM"],
+    link: "https://github.com/Subhanshusethi",
+    status: "Under Review (IEEE RA-L)",
+    metrics: [{ label: "ATE Reduction", value: "50–80%", icon: <Target size={16} /> }, { label: "Core Tech", value: "GNN + Factor Graph", icon: <BrainCircuit size={16} /> }],
+  },
+  {
+    title: "OptiPose — Object Pose Estimation Pipeline",
+    shortDescription: "Real-time RGB-D pipeline for trolley detection and 3D pose estimation with heterogeneous edge execution.",
+    longDescription: "Developed a real-time RGB-D vision pipeline for trolley detection and 3D pose estimation using YOLO (ONNX Runtime) in C++/ROS. Deployed on Intel NUC Ultra with heterogeneous execution (CPU, iGPU, NPU) achieving stable 10–30 Hz inference, enabling autonomous trolley alignment in real-world robotic operations.",
+    image: "/assets/images/optipose.png",
+    tags: ["C++", "ROS", "YOLO", "ONNX Runtime", "RGB-D", "Intel NUC"],
+    link: "https://github.com/Subhanshusethi/Object_Detection_PoseEstimation",
+    status: "Nov 2025 – Feb 2026",
+    metrics: [{ label: "Inference", value: "10–30 Hz", icon: <Zap size={16} /> }, { label: "Hardware", value: "CPU + iGPU + NPU", icon: <Target size={16} /> }],
+  },
+  {
+    title: "GoldenAid — Bystander First Aid AI",
+    shortDescription: "Fully on-device Android app combining YOLO, pose estimation, and Gemma 4 multimodal inference.",
+    longDescription: "Built a fully on-device Android app combining YOLO11n person detection, MediaPipe BlazePose pose estimation, and Gemma 4 E2B multimodal inference via LiteRT-LM — achieving 3.2s end-to-end latency with zero internet dependency. Fine-tuned Gemma 4 E2B using Unsloth + QLoRA on 3,000 first aid scenarios, producing action-first bystander-appropriate responses; integrated GPS incident logger and one-tap 108 emergency dialer.",
+    image: "/assets/images/goldenaid.png",
+    tags: ["Android", "Gemma 4", "LiteRT-LM", "YOLO11n", "MediaPipe", "Unsloth"],
+    link: "https://github.com/Subhanshusethi/GoldenAid",
+    status: "Apr – May 2026",
+    metrics: [{ label: "Latency", value: "3.2s E2E", icon: <Zap size={16} /> }, { label: "Connectivity", value: "Fully Offline", icon: <Target size={16} /> }],
+  },
+  {
+    title: "ROS Agentic Debugger",
+    shortDescription: "LLM-powered agentic tool that autonomously validates and debugs live ROS robotic pipelines.",
+    longDescription: "Automated live robotics validation by leveraging Gemma's native tool-calling capabilities to deeply reason over ROS topics, TF trees, and Hz node flows. Eliminated manual pipeline checks, enabling instantaneous diagnostic health verification aboard autonomous platforms.",
+    image: "/assets/images/ros-debugger.png",
+    tags: ["ROS", "Python", "Gemma 4", "Ollama", "Agentic AI", "Tool Calling"],
+    link: "https://github.com/Subhanshusethi",
+    status: "Mar – Apr 2026",
+    metrics: [{ label: "Architecture", value: "Agentic LLM", icon: <Bot size={16} /> }, { label: "Platform", value: "ROS", icon: <BrainCircuit size={16} /> }],
+  },
+  {
     title: "GExSent-MOE (MultiModal Classification)",
     shortDescription: "Multimodal sentiment analysis using a Mixture of Experts and Gated Attention.",
     longDescription: "Designed a novel multimodal classification model by integrating image and text modalities. This work employs a Mixture of Experts (MoE) module and an enhanced Gated Attention mechanism to capture both local and global contextual cues. It achieves state-of-the-art performance with a reduced parameter count by integrating a frozen CLIP image encoder and a ModernBERT text encoder.",
@@ -98,16 +138,6 @@ const projectsData: Project[] = [
     metrics: [{ label: "Architecture", value: "RAG", icon: <BrainCircuit size={16} /> }, { label: "Model", value: "Llama3", icon: <Bot size={16} /> }],
   },
   {
-    title: "Optimized Object Pose Estimation Pipeline",
-    shortDescription: "Real-time RGB-D vision pipeline for trolley detection and 3D pose estimation on CPU-only edge hardware.",
-    longDescription: "Developed a real-time RGB-D vision pipeline for trolley detection and 3D pose estimation using YOLO (ONNX) in C++/ROS. Deployed on CPU-only edge hardware (Intel NUC), achieving stable 10–30 Hz inference for autonomous robotic alignment. The pipeline is optimized for low-latency, high-reliability performance in industrial environments.",
-    image: "/assets/images/optipose.png",
-    tags: ["YOLO", "ONNX", "C++", "ROS", "RGB-D", "Pose Estimation", "Intel NUC"],
-    link: "https://github.com/Subhanshusethi/Object_Detection_PoseEstimation",
-    status: "Nov 2025 – Feb 2026",
-    metrics: [{ label: "Inference", value: "10–30 Hz", icon: <Zap size={16} /> }, { label: "Hardware", value: "CPU-Only Edge", icon: <Target size={16} /> }],
-  },
-  {
     title: "Scratch Detection – ML Deployment",
     shortDescription: "End-to-end automated ML pipeline with FastAPI, Docker, MLflow, and AWS deployment.",
     longDescription: "Designed an automated ML pipeline using FastAPI, Docker, and MLflow, integrating training, experiment tracking, and CI/CD. Deployed the containerized stack on AWS EC2 with Dockerized FastAPI services and S3-based dataset handling, enabling scalable and reproducible model deployment for scratch detection classification.",
@@ -121,14 +151,26 @@ const projectsData: Project[] = [
 
 const experienceData: Experience[] = [
   {
-    role: "Computer Vision Intern",
-    company: "Novus Hi-Tech",
-    date: "Jun 2024 – Present",
-    description: "Engineered and productionized real-time computer vision pipelines for autonomous pallet picker robots.",
+    role: "Computer Vision Engineer (AI/ML)",
+    company: "Novus Hi-Tech, Gurugram",
+    date: "Jul 2025 – Present",
+    description: "Building Physical AI systems: from real-time edge perception to VLA-driven dexterous manipulation on real robot hardware.",
     points: [
-      { text: "Improved object detection and pose estimation accuracy by 20% using YOLO, ByteTrack, and Kalman filters." },
-      { text: "Accelerated inference speed on NVIDIA edge devices using TensorRT and ONNX." },
-      { text: "Developed and deployed scalable, Dockerized solutions in a production environment." }
+      { text: "Developing a dual-arm wire quality inspection system on Anvil's OpenArm and SO101 robots using imitation learning policies (ACT, SmolVLA, Groot); conducting empirical evaluation of VLA architectures for language-conditioned, multi-step fine-grained manipulation." },
+      { text: "Deployed real-time RGB-D pose estimation pipeline in C++/ROS, achieving 25–30 Hz inference via OpenVINO for heterogeneous execution (CPU, iGPU, NPU) on Intel NUC Ultra." },
+      { text: "Engineered a Reflector-Based Localization (RBL) system integrating LiDAR temporal clustering and triangulation, achieving 5–10 cm pose accuracy." },
+      { text: "Optimized pallet detection by migrating from EfficientDet to YOLOv8 via TensorRT on Jetson Nano, achieving a 3x throughput increase (5–7 FPS to 15–20 FPS)." },
+      { text: "Automated complete ML training and versioning workflows using DVC, significantly accelerating offline annotation and model staging." }
+    ]
+  },
+  {
+    role: "Computer Vision Intern",
+    company: "Novus Hi-Tech, Gurugram",
+    date: "Jun 2024 – Jun 2025",
+    description: "Benchmarked and optimized real-time vision models for edge-robotics deployment on autonomous pallet picker robots.",
+    points: [
+      { text: "Benchmarked detection (YOLO, EfficientDet, DETR) and segmentation (Mask R-CNN, SAM) models to optimize real-time performance for edge-robotics deployment." },
+      { text: "Optimized Pose Estimation by eliminating RANSAC dependencies and leveraging RGB-D depth data for real-time edge execution, gaining proficiency across the full robotic stack (Controls, Navigation, Planning, Perception)." }
     ]
   },
   {
@@ -158,8 +200,13 @@ const experienceData: Experience[] = [
 
 const publicationsData = [
   {
+    title: "HAZE: Hierarchical Adaptive Zone-Enhanced SLAM",
+    journal: "Under Review at IEEE Robotics and Automation Letters (RA-L)",
+    status: "Under Review"
+  },
+  {
     title: "GEXSent: Gated Experts for Robust Sentiment Analysis Across Modalities",
-    journal: "Accepted at International Joint Conference on Neural Networks (IJCNN), 2025",
+    journal: "Accepted at International Joint Conference on Neural Networks (IJCNN), 2025, Rome, Italy",
     status: "Accepted"
   },
   {
@@ -177,8 +224,10 @@ const achievementsData = [
 
 const skillsData = {
   "Languages & Frameworks": ["Python", "C++", "PyTorch", "TensorFlow", "Transformers", "OpenCV"],
-  "MLOps & Tools": ["Docker", "Git/GitHub", "TensorRT", "ONNX", "ROS", "Weights & Biases"],
-  "Core Concepts": ["LLM Fine-tuning", "RAG", "Quantization", "Mixture of Experts", "Attention Mechanisms", "Object Detection", "Segmentation"],
+  "MLOps & Deployment": ["Docker", "Git/GitHub", "DVC", "MLflow", "W&B", "FastAPI", "AWS (EC2, S3, Lambda)"],
+  "Inference & Edge": ["TensorRT", "ONNX Runtime", "OpenVINO", "Jetson Nano", "Intel NUC Ultra"],
+  "Robotics & Embodied AI": ["ROS/ROS2", "SLAM", "Imitation Learning", "VLA", "LiDAR", "RGB-D", "RealSense D415"],
+  "Core Concepts": ["Computer Vision", "Deep Learning", "Embodied AI", "LLM Fine-tuning", "RAG", "Agentic AI", "Object Detection", "Pose Estimation"],
 };
 
 
