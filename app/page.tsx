@@ -4,6 +4,7 @@ import { useState, useEffect, ReactNode, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Github, Linkedin, Mail, Download, BrainCircuit, Eye, Code, Bot, Briefcase, Star, X, Zap, Target, Trophy, BookOpen, ChevronsRight, Video, ExternalLink, MapPin, Calendar } from 'lucide-react';
+import AttractorScene from './AttractorScene';
 
 // --- TYPE DEFINITIONS ---
 interface SectionProps {
@@ -319,12 +320,17 @@ export default function Portfolio() {
           id="home"
           ref={heroRef}
           style={{ opacity: heroOpacity, y: heroY }}
-          className="min-h-screen flex items-center py-24 pt-32"
+          className="relative min-h-screen flex items-center py-24 pt-32 overflow-hidden"
         >
-          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16 w-full">
+          {/* Full-bleed live chaotic-attractor backdrop */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full">
+            <AttractorScene />
+          </div>
+
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-16 w-full pointer-events-none">
 
             {/* Text side */}
-            <div className="flex-1 text-center md:text-left order-2 md:order-1">
+            <div className="flex-1 text-center md:text-left order-2 md:order-1 [&_a]:pointer-events-auto">
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -337,7 +343,7 @@ export default function Portfolio() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-none"
+                className="text-5xl lg:text-7xl font-bold text-white tracking-tight leading-none drop-shadow-[0_2px_24px_rgba(0,0,0,0.65)]"
               >
                 Subhanshu
                 <br />
@@ -349,7 +355,7 @@ export default function Portfolio() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
-                className="mt-5 text-lg text-gray-400 font-light max-w-lg mx-auto md:mx-0 leading-relaxed"
+                className="mt-5 text-lg text-gray-300 font-light max-w-lg mx-auto md:mx-0 leading-relaxed drop-shadow-[0_1px_16px_rgba(0,0,0,0.7)]"
               >
                 AI Engineer building systems that{' '}
                 <span className="text-white font-medium">see, reason, and act</span>
@@ -403,7 +409,7 @@ export default function Portfolio() {
 
             {/* Photo side */}
             <motion.div
-              className="order-1 md:order-2 flex-shrink-0"
+              className="order-1 md:order-2 flex-shrink-0 pointer-events-auto"
               initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
