@@ -533,11 +533,11 @@ export default function AttractorScene() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, x: 24, y: -8 }}
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            exit={{ opacity: 0, x: 24, y: -8 }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 24 }}
             transition={{ type: "spring", stiffness: 260, damping: 26 }}
-            className="absolute right-4 top-24 z-30 w-[min(92vw,20rem)] max-h-[78vh] overflow-y-auto rounded-2xl border border-white/[0.08] bg-gray-900/80 p-5 shadow-2xl backdrop-blur-xl sm:top-6"
+            className="absolute inset-x-2 bottom-2 z-30 max-h-[62vh] overflow-y-auto rounded-2xl border border-white/[0.08] bg-gray-900/90 p-4 shadow-2xl backdrop-blur-xl sm:inset-x-auto sm:right-4 sm:top-6 sm:bottom-auto sm:w-80 sm:max-h-[78vh] sm:bg-gray-900/80 sm:p-5"
           >
             <div className="mb-4 flex items-center justify-between">
               <div className="flex items-center gap-2">

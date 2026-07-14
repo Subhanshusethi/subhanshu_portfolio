@@ -288,14 +288,14 @@ export default function Portfolio() {
         initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="fixed top-0 left-0 right-0 z-40 flex justify-center py-4 px-6"
+        className="pointer-events-none fixed top-0 left-0 right-0 z-40 flex justify-center py-3 sm:py-4 px-3 sm:px-6"
       >
-        <div className="flex items-center gap-1 bg-gray-900/70 backdrop-blur-xl border border-white/[0.08] rounded-full px-3 py-2 shadow-xl">
+        <div className="pointer-events-auto flex items-center gap-0.5 sm:gap-1 bg-gray-900/70 backdrop-blur-xl border border-white/[0.08] rounded-full px-1.5 sm:px-3 py-1.5 sm:py-2 shadow-xl max-w-full">
           {navItems.map(item => (
             <a
               key={item.id}
               href={`#${item.id}`}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${activeSection === item.id
+              className={`px-2.5 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 ${activeSection === item.id
                 ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30'
                 : 'text-gray-400 hover:text-white'
                 }`}
@@ -306,28 +306,27 @@ export default function Portfolio() {
           <a
             href="/SubhanshuCV.pdf"
             download
-            className="ml-2 px-4 py-1.5 rounded-full text-sm font-semibold bg-cyan-500 text-gray-900 hover:bg-cyan-400 transition-colors flex items-center gap-1.5"
+            className="ml-1 sm:ml-2 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-cyan-500 text-gray-900 hover:bg-cyan-400 transition-colors flex items-center gap-1.5 whitespace-nowrap"
           >
-            <Download size={13} /> Resume
+            <Download size={13} /> <span className="hidden min-[420px]:inline">Resume</span>
           </a>
         </div>
       </motion.nav>
 
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* HERO — full-bleed so the attractor and its controls span the whole viewport */}
+      <motion.section
+        id="home"
+        ref={heroRef}
+        style={{ opacity: heroOpacity, y: heroY }}
+        className="relative min-h-screen overflow-hidden"
+      >
+        {/* Live chaotic-attractor backdrop */}
+        <div className="absolute inset-0">
+          <AttractorScene />
+        </div>
 
-        {/* HERO */}
-        <motion.section
-          id="home"
-          ref={heroRef}
-          style={{ opacity: heroOpacity, y: heroY }}
-          className="relative min-h-screen flex items-center py-24 pt-32 overflow-hidden"
-        >
-          {/* Full-bleed live chaotic-attractor backdrop */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full">
-            <AttractorScene />
-          </div>
-
-          <div className="relative z-10 flex flex-col md:flex-row items-center gap-12 md:gap-16 w-full pointer-events-none">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center py-24 pt-32">
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16 w-full pointer-events-none">
 
             {/* Text side */}
             <div className="flex-1 text-center md:text-left order-2 md:order-1 [&_a]:pointer-events-auto">
@@ -354,8 +353,17 @@ export default function Portfolio() {
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="mt-5 font-mono text-base sm:text-lg text-gray-400 drop-shadow-[0_1px_16px_rgba(0,0,0,0.7)]"
+              >
+                <span className="text-gray-500">&gt;</span> currently working on{' '}
+                <RotatingTitle />
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
-                className="mt-5 text-lg text-gray-300 font-light max-w-lg mx-auto md:mx-0 leading-relaxed drop-shadow-[0_1px_16px_rgba(0,0,0,0.7)]"
+                className="mt-4 text-lg text-gray-300 font-light max-w-lg mx-auto md:mx-0 leading-relaxed drop-shadow-[0_1px_16px_rgba(0,0,0,0.7)]"
               >
                 AI Engineer building systems that{' '}
                 <span className="text-white font-medium">see, reason, and act</span>
@@ -432,7 +440,10 @@ export default function Portfolio() {
               </div>
             </motion.div>
           </div>
-        </motion.section>
+        </div>
+      </motion.section>
+
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* PROJECTS */}
         <Section id="projects" title="Featured Projects" icon={<Eye className="text-cyan-400" size={22} />}>
@@ -699,6 +710,28 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         </div>
       </motion.div>
     </motion.div>
+  );
+}
+
+// --- TYPEWRITER TITLE (types once, cursor keeps blinking) ---
+const CURRENT_FOCUS = 'Embodied AI';
+
+function RotatingTitle() {
+  const [text, setText] = useState('');
+
+  useEffect(() => {
+    if (text === CURRENT_FOCUS) return;
+    const t = setTimeout(() => {
+      setText(CURRENT_FOCUS.slice(0, text.length + 1));
+    }, text === '' ? 900 : 80);
+    return () => clearTimeout(t);
+  }, [text]);
+
+  return (
+    <span className="text-cyan-300">
+      {text}
+      <span className="animate-pulse text-cyan-400 font-light">▍</span>
+    </span>
   );
 }
 
